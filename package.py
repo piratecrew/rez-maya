@@ -15,6 +15,6 @@ variants = [
 uuid = "repository.maya"
 
 def commands():
-	env.MAYA_LOCATION.set("{root}/autodesk/maya")
-	env.PATH.prepend("{root}/autodesk/maya/bin")
+    env.MAYA_LOCATION.set("{root}/autodesk/maya")
+    env.PATH.prepend("{root}/autodesk/maya/bin")
     env.LD_LIBRARY_PATH.prepend("{root}/autodesk/maya/lib")
