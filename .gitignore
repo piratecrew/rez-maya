@@ -1,0 +1,6 @@
+build/
+archives/*.tgz
+archives/*.zip
+archives/*.dmg
+archives/*.msi
+archives/*.exe
