@@ -1,0 +1,34 @@
+#!/bin/bash
+
+if [ "$#" -ne 3 ]; then
+  echo "Illegal number of parameters"
+  echo "${0} <install|uninstall> <desktop|network> <serial_number>"
+  exit 1
+fi
+
+if [ "$1" == "install" ]; then
+  ACTION="-i"
+else
+  ACTION="-u"
+fi
+
+if [ "$2" == "network" ]; then
+  LICENSE_TYPE="N"
+else
+  LICENSE_TYPE="S"
+fi
+
+MAYA_VERSION=@MAYA_MAJOR_VERSION@
+
+if [ "$MAYA_VERSION" == "2015" ]; then
+  PRODUCT_KEY=657G1
+else
+  PRODUCT_KEY=657H1
+fi
+SERIAL=$3
+
+VERSION_STR=@MAYA_MAJOR_VERSION@.0.0.F
+
+PIT_LOCATION=@CMAKE_INSTALL_PREFIX@/Adlm/var/Maya@MAYA_MAJOR_VERSION@/MayaConfig.pit
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:@CMAKE_INSTALL_PREFIX@/Adlm/opt/@ADLM_RELEASE@/lib64
+adlmreg $ACTION $LICENSE_TYPE $PRODUCT_KEY $PRODUCT_KEY $VERSION_STR $SERIAL $PIT_LOCATION
