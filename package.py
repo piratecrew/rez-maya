@@ -1,7 +1,7 @@
 name = "maya"
 
 """ Version: 20#.EXT.SP """
-version = "2015.1.6"
+version = "2017.0.0"
 
 description = \
     """
@@ -9,7 +9,7 @@ description = \
     """
 
 variants = [
-    ["platform-linux"]
+    ["Linux"]
 ]
 
 uuid = "repository.maya"
@@ -24,3 +24,6 @@ def commands():
     env.PATH.prepend("{root}/maya/bin")
     env.PATH.prepend("{root}/bin")
     env.AUTODESK_ADLM_THINCLIENT_ENV.set("{root}/AdlmThinClientCustomEnv.xml")
+    env.MAYA_COLOR_MANAGEMENT_POLICY_LOCK = 1
+    env.MAYA_COLOR_MANAGEMENT_POLICY_FILE = "{root}/MayaNoColorManagment.xml"
+    env.MAYA_VERSION = 2017.0
