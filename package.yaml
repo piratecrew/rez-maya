@@ -1,0 +1,21 @@
+name: maya
+#Version: 20#.EXT.SP
+version: 2017.0.0
+
+variants:
+    - [ Linux ]
+
+
+uuid: repository.maya
+
+tools:
+    - maya
+    - register_maya
+
+commands:
+  - export MAYA_LOCATION=!ROOT!/maya
+  - export PATH=!ROOT!/bin:$MAYA_ROOT/bin:$PATH
+  - export AUTODESK_ADLM_THINCLIENT_ENV=!ROOT!/AdlmThinClientCustomEnv.xml
+  - export MAYA_COLOR_MANAGEMENT_POLICY_LOCK=1
+  - export MAYA_COLOR_MANAGEMENT_POLICY_FILE=!ROOT!/MayaNoColorManagment.xml
+  - export MAYA_VERSION=2017.0
