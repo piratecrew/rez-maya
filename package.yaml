@@ -19,3 +19,4 @@ commands:
   - export MAYA_COLOR_MANAGEMENT_POLICY_LOCK=1
   - export MAYA_COLOR_MANAGEMENT_POLICY_FILE=!ROOT!/MayaNoColorManagment.xml
   - export MAYA_VERSION=2017.0
+  - export MAYA_VP2_USE_GPU_MAX_TARGET_SIZE=1

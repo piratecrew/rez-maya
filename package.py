@@ -19,6 +19,7 @@ tools = [
     "register_maya"
 ]
 
+
 def commands():
     env.MAYA_LOCATION.set("{root}/maya")
     env.PATH.prepend("{root}/maya/bin")
@@ -27,3 +28,4 @@ def commands():
     env.MAYA_COLOR_MANAGEMENT_POLICY_LOCK = 1
     env.MAYA_COLOR_MANAGEMENT_POLICY_FILE = "{root}/MayaNoColorManagment.xml"
     env.MAYA_VERSION = 2017.0
+    env.MAYA_VP2_USE_GPU_MAX_TARGET_SIZE = 1
